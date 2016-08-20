@@ -4,7 +4,7 @@ angular.module('CardsAgainstAssembly')
 
 CardsIndexController.$inject = ['$scope','$http'];
 function CardsIndexController($scope, $http){
-  $http.get("https://shielded-forest-41789.herokuapp.com/api/flashcards")
+  $http.get("http://localhost:3000/api/cards")
     .then(function(response){ $scope.cards = response.data; });
 }
 
@@ -13,6 +13,6 @@ function CardsShowController($scope, $http, $location) {
   var path = $location.absUrl();
   var split = path.split('/');
   var id = split[split.length-1];
-  $http.get("https://shielded-forest-41789.herokuapp.com/api/flashcards/" + id)
+  $http.get("http://localhost:3000/api/cards/" + id)
     .then(function(response){ $scope.card = response.data; });
 }

@@ -28,7 +28,6 @@
       <section id="cards" class="container-fluid" ng-controller="CardsIndexController">
         <div class="row">
           <div class="col-sm-6 col-md-6 col-lg-4" ng-repeat="card in cards" >
-            {{card._id}}
             <wdi-card card="{{card._id}}" question="{{card.question}}"></wdi-card>
           </div>
         </div>
